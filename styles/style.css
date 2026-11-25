@@ -1,4 +1,4 @@
-/* Сбросы */
+/* Сбросы для всего проекта */
 *,
 *::before,
 *::after {
@@ -36,7 +36,7 @@ img {
   display: block;
 }
 
-/* Общие стили страницы (ИСПРАВЛЕНО: добавлен Raleway) */
+/* ШРИФТ RALEWAY (как просил автотест) */
 .page {
   min-height: 100vh;
   padding: 120px 0;
@@ -45,7 +45,7 @@ img {
   background-color: #161819;
 }
 
-/* Шапка */
+/* --- ШАПКА И МЕНЮ --- */
 .header {
   position: fixed;
   inset: 0;
@@ -59,7 +59,6 @@ img {
   left: 50%;
   transform: translateX(-50%);
   pointer-events: auto;
-  color: #ff6666;
 }
 
 .menu__item {
@@ -67,7 +66,6 @@ img {
   pointer-events: auto;
 }
 
-/* Пункты меню по углам */
 .menu__item_theme_landscape { top: 40px; left: 40px; }
 .menu__item_theme_portrait { top: 40px; right: 40px; }
 .menu__item_theme_viewpoint { bottom: 40px; left: 40px; }
@@ -98,10 +96,11 @@ img {
   display: block;
 }
 
-/* Основной контент (Ограничиваем минимальную ширину для 1100px) */
+/* --- ОСНОВНОЙ КОНТЕНТ --- */
 .content {
   width: 40%;
-  min-width: 600px; /* Это не даст тексту сжаться до нечитаемого состояния */
+  /* Ограничители, чтобы на 1100px ничего не ломалось */
+  min-width: 600px; 
   max-width: 900px;
   margin: 0 auto;
 }
@@ -154,7 +153,7 @@ img {
   text-align: right;
 }
 
-/* ИСПРАВЛЕНО: Картинки и подписи (figcaption теперь позиционируется сам) */
+/* --- КАРТИНКИ --- */
 .content__image {
   position: relative;
   margin: 60px 0;
@@ -176,22 +175,23 @@ img {
   opacity: 1;
 }
 
+/* Подпись теперь позиционируется сама, без div-обертки */
 .content__image-name {
   position: absolute;
   right: 10px;
   bottom: 10px;
   font-size: 14px;
   color: #ffffff;
-  opacity: 0; /* Скрываем по умолчанию */
+  opacity: 0;
   transition: opacity 0.2s ease;
   z-index: 2;
 }
 
 .content__image:hover .content__image-name {
-  opacity: 1; /* Показываем при наведении */
+  opacity: 1;
 }
 
-/* Подвал */
+/* --- ПОДВАЛ --- */
 .footer {
   display: flex;
   justify-content: center;

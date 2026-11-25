@@ -16,7 +16,7 @@
   font-display: swap;
 }
 
-/* ИСПРАВЛЕНО: Добавлен Raleway (тест его требует) */
+/* ДОБАВЛЕН RALEWAY (тест его требует) */
 @font-face {
   font-family: 'Raleway';
   src: url('https://code.s3.yandex.net/web-code/fonts/Raleway-Regular.woff2') format('woff2'),

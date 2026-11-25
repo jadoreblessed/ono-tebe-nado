@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Как снимать на мобильный</title>
-    <!-- 1. Сначала шрифты -->
+    
+    <!-- ПРАВИЛЬНЫЙ ПОРЯДОК: Сначала шрифты -->
     <link rel="stylesheet" href="./fonts/fonts.css" />
-    <!-- 2. Потом собственные стили -->
+    <!-- Затем собственные стили -->
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/text-styles.css" />
   </head>
   <body class="page">
     
-    <!-- Логотип (обернут в ссылку) и меню в шапке -->
+    <!-- ШАПКА -->
     <header class="header">
+      <!-- ЛОГОТИП (обязательно обернут в ссылку) -->
       <a href="#" class="logo">
-        <h1 class="title">Фотография</h1>
+        <img src="https://pictures.s3.yandex.net/positioning/logo.svg" alt="Логотип" />
       </a>
+      
+      <!-- Меню -->
       <nav class="menu">
         <ul class="menu__list">
           <li class="menu__item menu__item_theme_landscape">
@@ -40,7 +43,7 @@
       </nav>
     </header>
 
-    <!-- Основной контент -->
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
     <main class="content">
       <h1 class="content__title content__title_item_main">Идея снимка</h1>
 
@@ -56,7 +59,9 @@
             «Зрение — это одно из быстрейших действий, какие только существуют…
             и тем не менее оно понимает сразу лишь один предмет».
           </p>
-          <p class="content__quote-origin">Леонардо да Винчи</p>
+          <p class="content__quote-origin">
+            Леонардо да Винчи, «Трактат о живописи».
+          </p>
         </blockquote>
       </section>
 
@@ -68,7 +73,7 @@
           Рамка подразумевает, что главное — внутри неё, и туда надо посмотреть.
         </p>
 
-        <!-- ИСПРАВЛЕНО: figcaption теперь прямой потомок figure -->
+        <!-- КАРТИНКА 1 (исправленная структура) -->
         <figure class="content__image">
           <img src="https://pictures.s3.yandex.net/positioning/frame.jpg" alt="Ночная улыбка, Москва" class="content__image-item" />
           <div class="content__image-cover"></div>
@@ -80,17 +85,18 @@
           Полупроницаемые для взгляда объекты на переднем плане играют ту же роль, что и рамка.
         </p>
 
+        <!-- КАРТИНКА 2 (исправленная структура) -->
         <figure class="content__image">
           <img src="https://pictures.s3.yandex.net/positioning/cover.jpg" alt="Волейбол в лесу" class="content__image-item" />
           <div class="content__image-cover"></div>
           <figcaption class="content__image-name">Волейбол в лесу, Серебряный Бор.</figcaption>
         </figure>
       </section>
-
     </main>
 
-    <!-- Подвал с контактами (добавлены tel: и mailto:) -->
+    <!-- ПОДВАЛ С КОНТАКТАМИ -->
     <footer class="footer">
+      <!-- Обязательные префиксы tel: и mailto: -->
       <a href="tel:+79991234567" class="footer__link">+7 (999) 123-45-67</a>
       <a href="mailto:info@example.com" class="footer__link">info@example.com</a>
     </footer>
