@@ -1,1 +1,216 @@
-/* место для вашего кода */
+/* ==========================================================================
+   Базовые стили и сбросы
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Правило из чек-листа: переопределяем дефолтный box-sizing */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin: 0; /* Сбрасываем браузерные отступы */
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Убираем маркеры списков */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%; /* Ограничиваем размеры картинок */
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   Основные стили страницы
+   ========================================================================== */
+
+.page {
+  min-height: 100vh;
+  padding: 120px 0;
+  color: #ffffff;
+  font-family: Lora, serif; /* Альтернативный шрифт на случай, если основной не загрузится */
+  background-color: #161819;
+}
+
+/* ==========================================================================
+   Меню (Шапка)
+   ========================================================================== */
+
+.header {
+  position: fixed;
+  inset: 0; /* Растягиваем шапку на весь экран, чтобы позиционировать пункты по углам */
+  pointer-events: none; /* Чтобы невидимая шапка не перекрывала клики по тексту */
+  z-index: 10;
+}
+
+.menu__item {
+  position: fixed; /* Прибиваем пункты меню к экрану */
+  pointer-events: auto; /* Возвращаем кликабельность самим пунктам */
+}
+
+.menu__item_theme_landscape {
+  top: 40px;
+  left: 40px;
+}
+
+.menu__item_theme_portrait {
+  top: 40px;
+  right: 40px;
+}
+
+.menu__item_theme_viewpoint {
+  bottom: 40px;
+  left: 40px;
+}
+
+.menu__item_theme_expression {
+  bottom: 40px;
+  right: 40px;
+}
+
+.menu__link {
+  color: #a6a6a6;
+  font-family: PTMono, monospace; /* Альтернативный моноширинный шрифт */
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.menu__link:hover {
+  color: #ff6666;
+}
+
+/* Всплывающие картинки меню */
+.menu__picture {
+  position: absolute;
+  top: 100%; /* Появляется под ссылкой */
+  left: 0;
+  display: none;
+  width: 300px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.menu__item:hover .menu__picture {
+  display: block;
+}
+
+/* ==========================================================================
+   Основной контент
+   ========================================================================== */
+
+.content {
+  width: 40%;
+  margin: 0 auto; /* Центрируем контент по горизонтали */
+}
+
+.content__title {
+  font-family: 'Playfair Display', serif;
+}
+
+.content__title_item_main {
+  margin-bottom: 60px;
+  color: #ff6666;
+  font-size: 55px;
+  line-height: 1.27; /* Интерлиньяж в относительных единицах */
+}
+
+.content__title_item_sub {
+  margin: 120px 0 60px;
+  color: #ff6666;
+  font-size: 55px;
+  line-height: 1.27;
+}
+
+.content__title_item_method {
+  margin: 60px 0 20px;
+  font-size: 40px;
+  line-height: 1.25;
+}
+
+.content__text {
+  margin-bottom: 60px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.content__quote {
+  position: relative;
+  margin: 0 0 60px 60px; /* Заменили top/left на margin для лучшей практики */
+  border-top: 2px solid #ff6666;
+  border-bottom: 2px solid #ff6666;
+  padding: 40px;
+  font-size: 34px;
+  line-height: 1.23;
+}
+
+.content__quote-origin {
+  display: block;
+  margin-top: 52px;
+  color: #a6a6a6;
+  font-size: 22px;
+  text-align: right;
+}
+
+/* ==========================================================================
+   Картинки и "Покрывала" (Hover-эффект)
+   ========================================================================== */
+
+.content__image {
+  position: relative; /* Контекст позиционирования для покрывала */
+  margin: 60px 0;
+}
+
+.content__image-item {
+  width: 100%;
+}
+
+.content__image-cover {
+  position: absolute;
+  inset: 0; /* Растягиваем на весь родительский блок */
+  opacity: 0; /* Скрываем по умолчанию */
+  background-color: rgb(0 0 0 / 0.3);
+  transition: opacity 0.2s ease;
+}
+
+.content__image:hover .content__image-cover {
+  opacity: 1; /* Проявляем при наведении на контейнер */
+}
+
+.content__image-name {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Подвал (Копирайт)
+   ========================================================================== */
+
+.footer {
+  margin-top: 40px;
+  color: #a6a6a6;
+  font-size: 16px;
+  line-height: 1.5;
+}
