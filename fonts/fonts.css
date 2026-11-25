@@ -1,33 +1,7 @@
 @font-face {
-  font-family: Raleway;
-  src:
-    url(./Raleway-Regular.woff2) format('woff2'),
-    url(./Raleway-Regular.woff) format('woff');
-  font-weight: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Raleway;
-  src:
-    url(./Raleway-Bold.woff2) format('woff2'),
-    url(./Raleway-Bold.woff) format('woff');
-  font-weight: bold;
-  font-display: swap;
-}
-@font-face {
   font-family: 'PTMono';
   src: url('https://code.s3.yandex.net/web-code/fonts/PTMono-Regular.woff2') format('woff2'),
        url('https://code.s3.yandex.net/web-code/fonts/PTMono-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lora';
-  src: url('https://code.s3.yandex.net/web-code/fonts/Lora-Regular.woff2') format('woff2'),
-       url('https://code.s3.yandex.net/web-code/fonts/Lora-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -38,6 +12,16 @@
   src: url('https://code.s3.yandex.net/web-code/fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
        url('https://code.s3.yandex.net/web-code/fonts/PlayfairDisplay-Bold.woff') format('woff');
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ИСПРАВЛЕНО: Добавлен Raleway (тест его требует) */
+@font-face {
+  font-family: 'Raleway';
+  src: url('https://code.s3.yandex.net/web-code/fonts/Raleway-Regular.woff2') format('woff2'),
+       url('https://code.s3.yandex.net/web-code/fonts/Raleway-Regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

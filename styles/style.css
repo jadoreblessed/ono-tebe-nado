@@ -1,11 +1,8 @@
-/* ==========================================================================
-   Базовые стили и сбросы
-   ========================================================================== */
-
+/* Сбросы */
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /* Правило из чек-листа: переопределяем дефолтный box-sizing */
+  box-sizing: border-box;
 }
 
 body {
@@ -19,13 +16,13 @@ h3,
 p,
 figure,
 blockquote {
-  margin: 0; /* Сбрасываем браузерные отступы */
+  margin: 0;
 }
 
 ul {
   margin: 0;
   padding: 0;
-  list-style: none; /* Убираем маркеры списков */
+  list-style: none;
 }
 
 a {
@@ -34,62 +31,51 @@ a {
 }
 
 img {
-  max-width: 100%; /* Ограничиваем размеры картинок */
+  max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* ==========================================================================
-   Основные стили страницы
-   ========================================================================== */
-
+/* Общие стили страницы (ИСПРАВЛЕНО: добавлен Raleway) */
 .page {
   min-height: 100vh;
   padding: 120px 0;
   color: #ffffff;
-  font-family: Lora, serif; /* Альтернативный шрифт на случай, если основной не загрузится */
+  font-family: 'Raleway', sans-serif;
   background-color: #161819;
 }
 
-/* ==========================================================================
-   Меню (Шапка)
-   ========================================================================== */
-
+/* Шапка */
 .header {
   position: fixed;
-  inset: 0; /* Растягиваем шапку на весь экран, чтобы позиционировать пункты по углам */
-  pointer-events: none; /* Чтобы невидимая шапка не перекрывала клики по тексту */
+  inset: 0;
+  pointer-events: none;
   z-index: 10;
 }
 
+.logo {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: auto;
+  color: #ff6666;
+}
+
 .menu__item {
-  position: fixed; /* Прибиваем пункты меню к экрану */
-  pointer-events: auto; /* Возвращаем кликабельность самим пунктам */
+  position: fixed;
+  pointer-events: auto;
 }
 
-.menu__item_theme_landscape {
-  top: 40px;
-  left: 40px;
-}
-
-.menu__item_theme_portrait {
-  top: 40px;
-  right: 40px;
-}
-
-.menu__item_theme_viewpoint {
-  bottom: 40px;
-  left: 40px;
-}
-
-.menu__item_theme_expression {
-  bottom: 40px;
-  right: 40px;
-}
+/* Пункты меню по углам */
+.menu__item_theme_landscape { top: 40px; left: 40px; }
+.menu__item_theme_portrait { top: 40px; right: 40px; }
+.menu__item_theme_viewpoint { bottom: 40px; left: 40px; }
+.menu__item_theme_expression { bottom: 40px; right: 40px; }
 
 .menu__link {
   color: #a6a6a6;
-  font-family: PTMono, monospace; /* Альтернативный моноширинный шрифт */
+  font-family: 'PTMono', monospace;
   font-size: 16px;
   text-transform: uppercase;
   transition: color 0.2s ease;
@@ -99,14 +85,12 @@ img {
   color: #ff6666;
 }
 
-/* Всплывающие картинки меню */
 .menu__picture {
   position: absolute;
-  top: 100%; /* Появляется под ссылкой */
+  top: 100%;
   left: 0;
   display: none;
   width: 300px;
-  border-radius: 8px;
   margin-top: 10px;
 }
 
@@ -114,13 +98,12 @@ img {
   display: block;
 }
 
-/* ==========================================================================
-   Основной контент
-   ========================================================================== */
-
+/* Основной контент (Ограничиваем минимальную ширину для 1100px) */
 .content {
   width: 40%;
-  margin: 0 auto; /* Центрируем контент по горизонтали */
+  min-width: 600px; /* Это не даст тексту сжаться до нечитаемого состояния */
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .content__title {
@@ -131,7 +114,7 @@ img {
   margin-bottom: 60px;
   color: #ff6666;
   font-size: 55px;
-  line-height: 1.27; /* Интерлиньяж в относительных единицах */
+  line-height: 1.27;
 }
 
 .content__title_item_sub {
@@ -155,7 +138,7 @@ img {
 
 .content__quote {
   position: relative;
-  margin: 0 0 60px 60px; /* Заменили top/left на margin для лучшей практики */
+  margin: 0 0 60px 60px;
   border-top: 2px solid #ff6666;
   border-bottom: 2px solid #ff6666;
   padding: 40px;
@@ -171,12 +154,9 @@ img {
   text-align: right;
 }
 
-/* ==========================================================================
-   Картинки и "Покрывала" (Hover-эффект)
-   ========================================================================== */
-
+/* ИСПРАВЛЕНО: Картинки и подписи (figcaption теперь позиционируется сам) */
 .content__image {
-  position: relative; /* Контекст позиционирования для покрывала */
+  position: relative;
   margin: 60px 0;
 }
 
@@ -186,14 +166,14 @@ img {
 
 .content__image-cover {
   position: absolute;
-  inset: 0; /* Растягиваем на весь родительский блок */
-  opacity: 0; /* Скрываем по умолчанию */
+  inset: 0;
+  opacity: 0;
   background-color: rgb(0 0 0 / 0.3);
   transition: opacity 0.2s ease;
 }
 
 .content__image:hover .content__image-cover {
-  opacity: 1; /* Проявляем при наведении на контейнер */
+  opacity: 1;
 }
 
 .content__image-name {
@@ -202,15 +182,25 @@ img {
   bottom: 10px;
   font-size: 14px;
   color: #ffffff;
+  opacity: 0; /* Скрываем по умолчанию */
+  transition: opacity 0.2s ease;
+  z-index: 2;
 }
 
-/* ==========================================================================
-   Подвал (Копирайт)
-   ========================================================================== */
+.content__image:hover .content__image-name {
+  opacity: 1; /* Показываем при наведении */
+}
 
+/* Подвал */
 .footer {
-  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 80px;
   color: #a6a6a6;
   font-size: 16px;
-  line-height: 1.5;
+}
+
+.footer__link:hover {
+  color: #ffffff;
 }

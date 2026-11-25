@@ -7,47 +7,34 @@
     <title>Как снимать на мобильный</title>
     <!-- 1. Сначала шрифты -->
     <link rel="stylesheet" href="./fonts/fonts.css" />
-    <!-- 2. Затем глобальные/вендорные стили (если есть) -->
-    <!-- <link rel="stylesheet" href="./styles/vendor.css" /> -->
-    <!-- 3. В конце основные стили -->
+    <!-- 2. Потом собственные стили -->
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/text-styles.css" />
   </head>
   <body class="page">
-    <!-- Шапка сайта -->
+    
+    <!-- Логотип (обернут в ссылку) и меню в шапке -->
     <header class="header">
+      <a href="#" class="logo">
+        <h1 class="title">Фотография</h1>
+      </a>
       <nav class="menu">
         <ul class="menu__list">
           <li class="menu__item menu__item_theme_landscape">
             <a href="#" class="menu__link">Пейзаж</a>
-            <img
-              src="https://pictures.s3.yandex.net/positioning/landscape_hover.jpg"
-              alt="Пейзаж"
-              class="menu__picture"
-            />
+            <img src="https://pictures.s3.yandex.net/positioning/landscape_hover.jpg" alt="Пейзаж" class="menu__picture" />
           </li>
           <li class="menu__item menu__item_theme_portrait">
             <a href="#" class="menu__link">Портрет</a>
-            <img
-              src="https://pictures.s3.yandex.net/positioning/portrait_hover.jpg"
-              alt="Портрет"
-              class="menu__picture"
-            />
+            <img src="https://pictures.s3.yandex.net/positioning/portrait_hover.jpg" alt="Портрет" class="menu__picture" />
           </li>
           <li class="menu__item menu__item_theme_viewpoint">
             <a href="#" class="menu__link">Ракурс</a>
-            <img
-              src="https://pictures.s3.yandex.net/positioning/viewpoint_hover.jpg"
-              alt="Ракурс"
-              class="menu__picture"
-            />
+            <img src="https://pictures.s3.yandex.net/positioning/viewpoint_hover.jpg" alt="Ракурс" class="menu__picture" />
           </li>
           <li class="menu__item menu__item_theme_expression">
             <a href="#" class="menu__link">Выразительность</a>
-            <img
-              src="https://pictures.s3.yandex.net/positioning/expression_hover.jpg"
-              alt="Выразительность"
-              class="menu__picture"
-            />
+            <img src="https://pictures.s3.yandex.net/positioning/expression_hover.jpg" alt="Выразительность" class="menu__picture" />
           </li>
         </ul>
       </nav>
@@ -57,7 +44,7 @@
     <main class="content">
       <h1 class="content__title content__title_item_main">Идея снимка</h1>
 
-      <section class="content__section">
+      <section class="content__head">
         <p class="content__text">
           Даже фото на смартфоне разглядывают очень внимательно, если в кадре
           есть загадка. Людям нравится делать открытия, особенно если для этого
@@ -73,34 +60,39 @@
         </blockquote>
       </section>
 
-      <section class="content__section">
+      <section class="content__item">
         <h2 class="content__title content__title_item_sub">Управление взглядом</h2>
+        
         <h3 class="content__title content__title_item_method">Рамка</h3>
         <p class="content__text">
           Рамка подразумевает, что главное — внутри неё, и туда надо посмотреть.
         </p>
 
-        <!-- Пример карточки с картинкой и покрывалом -->
+        <!-- ИСПРАВЛЕНО: figcaption теперь прямой потомок figure -->
         <figure class="content__image">
-          <img
-            src="https://pictures.s3.yandex.net/positioning/frame.jpg"
-            alt="Ночная улыбка, Москва"
-            class="content__image-item"
-          />
-          <div class="content__image-cover">
-            <figcaption class="content__image-name">
-              Ночная улыбка, Москва.
-            </figcaption>
-          </div>
+          <img src="https://pictures.s3.yandex.net/positioning/frame.jpg" alt="Ночная улыбка, Москва" class="content__image-item" />
+          <div class="content__image-cover"></div>
+          <figcaption class="content__image-name">Ночная улыбка, Москва.</figcaption>
+        </figure>
+
+        <h3 class="content__title content__title_item_method">Вуаль</h3>
+        <p class="content__text">
+          Полупроницаемые для взгляда объекты на переднем плане играют ту же роль, что и рамка.
+        </p>
+
+        <figure class="content__image">
+          <img src="https://pictures.s3.yandex.net/positioning/cover.jpg" alt="Волейбол в лесу" class="content__image-item" />
+          <div class="content__image-cover"></div>
+          <figcaption class="content__image-name">Волейбол в лесу, Серебряный Бор.</figcaption>
         </figure>
       </section>
-      
-      <!-- Сюда ты можешь добавить остальные секции с текстом и картинками по аналогии -->
+
     </main>
 
-    <!-- Подвал сайта -->
+    <!-- Подвал с контактами (добавлены tel: и mailto:) -->
     <footer class="footer">
-      <p class="content__text content__text_type_copyright">Фото: Сергей Нугаев</p>
+      <a href="tel:+79991234567" class="footer__link">+7 (999) 123-45-67</a>
+      <a href="mailto:info@example.com" class="footer__link">info@example.com</a>
     </footer>
   </body>
 </html>
